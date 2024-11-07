@@ -1,0 +1,180 @@
+/* farm.module.css */
+
+/* Container for the entire page */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to the bottom */
+    padding: 20px;
+    background-color: #ffffff;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+
+  
+  .menuIcon {
+    font-size: 1.8rem; /* Adjust size of the menu icon */
+    color: white; /* Make the icon color white */
+    cursor: pointer; /* Change the cursor to pointer on hover */
+  }
+  
+  /* Placeholder for menu icon styling */
+  .menuIcon {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 24px;
+    color: white;
+  }
+  
+  /* Main content styling */
+  .main {
+    max-width: 800px;
+    width: 100%;
+    margin-top: 50px; /* Ensures space from the fixed header */
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth transitions for interactive elements */
+
+  }
+  
+  /* Search bar styling */
+  .searchBar {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-size: 16px;
+  }
+  
+
+
+  .cardContainer {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-around; /* Space between cards */
+    gap: 5px; /* Space between rows and columns */
+    padding-top: 20px;
+}
+
+/* Card styling */
+.card {
+    width: 45%; /* Width of each card (adjust to fit 2 per row) */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a nice effect */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.card img {
+    width: 50%; /* Full width for the image */
+    height: 60px; /* Fixed height for the image */
+    object-fit: cover;
+     /* Ensures the image covers the area without stretching */
+}
+
+.img {
+  width: 100%; /* Full width for the image */
+  height: 125px; /* Fixed height for the image */
+  object-fit: contain;
+  object-position:center;
+   /* Ensures the image covers the area without stretching */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* On smaller screens, make the card take the full width */
+    }
+}
+  
+  /* Individual card styling */
+
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Add more depth */
+  }
+  
+  .card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #4CAF50;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #757575;
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Button to import data */
+  .mainButton {
+    margin-top: 0px;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .mainButton:hover {
+    background-color: #388E3C; /* Darken on hover */
+  }
+  
+
+
+/* Footer styles */
+.footer {
+  margin-top: auto; /* Push footer to the bottom */
+  text-align: center; /* Center text */
+  padding: 20px 0; /* Padding for footer */
+  background-color: #9CCB69; /* Same background as header */
+  color: white; /* White text */
+  font-size: 14px; /* Font size */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Align to bottom */
+  left: 0; /* Align to left */
+  right: 0; /* Align to right */
+}
+
+  
+
+/* listCattle.module.css */
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.loadingText {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #3498db;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

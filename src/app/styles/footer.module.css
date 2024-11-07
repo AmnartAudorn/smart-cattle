@@ -1,0 +1,14 @@
+/* Footer styles */
+.footer {
+    margin-top: auto; /* Push footer to the bottom */
+    text-align: center; /* Center text */
+    padding: 20px 0; /* Padding for footer */
+    background-color: #9CCB69; /* Same background as header */
+    color: white; /* White text */
+    font-size: 14px; /* Font size */
+    width: 100%; /* Full width */
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Align to bottom */
+    left: 0; /* Align to left */
+    right: 0; /* Align to right */
+  }

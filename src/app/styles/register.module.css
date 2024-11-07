@@ -1,0 +1,80 @@
+.registerContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding-top: 60px; /* To account for the fixed header */
+  padding-bottom: 40px;
+}
+
+/* Header positioned at the top of the screen */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #9CCB69;
+  color: white;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  z-index: 1000;
+}
+
+/* Form container */
+.formContainer {
+  background-color: white;
+  padding: 40px;
+  margin: auto;
+  width: 80%;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.formTitle {
+  text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.formSubtitle {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+/* Button styles */
+.submitButton {
+  width: 100%;
+  background-color: #1890ff;
+  border-color: #1890ff;
+  color: white;
+  height: 45px;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  color: #777;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #9CCB69;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 20px;
+  }
+}

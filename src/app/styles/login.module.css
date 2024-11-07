@@ -1,0 +1,121 @@
+/* Container for full layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff;
+    padding-top: 60px; /* To account for the fixed header */
+  }
+  
+  /* Header positioned at the top of the screen */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #9CCB69;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+    z-index: 1000;
+  }
+
+
+  .header {
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  .languageSwitcher {
+    margin-left: auto;
+  }
+  
+  /* Centering the login box */
+  .loginContainer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loginBox {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .form {
+    width: 100%;
+  }
+  
+  /* Button styles */
+  .loginButton {
+    width: 100%;
+    background-color: #ff4d4f;
+    border-color: #ff4d4f;
+  }
+  
+  .facebookButton {
+    width: 100%;
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: white;
+  }
+  
+  /* Footer Links */
+  .footerLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+/* Footer styles */
+.footer {
+  margin-top: auto; /* Push footer to the bottom */
+  text-align: center; /* Center text */
+  padding: 20px 0; /* Padding for footer */
+  background-color: #9CCB69; /* Same background as header */
+  color: white; /* White text */
+  font-size: 14px; /* Font size */
+  width: 100%; /* Full width */
+  position: fixed; /* Fixed position */
+  bottom: 0; /* Align to bottom */
+  left: 0; /* Align to left */
+  right: 0; /* Align to right */
+}
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .loginBox {
+      padding: 20px;
+    }
+  
+    .footerLinks {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .loginContainer {
+      padding: 20px;
+    }
+  }
+
+  .cookieConsent {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(229, 229, 229);
+    color: rgb(51, 51, 51);
+    text-align: center;
+    padding: 50px 0px;
+    z-index: 1000;
+  }

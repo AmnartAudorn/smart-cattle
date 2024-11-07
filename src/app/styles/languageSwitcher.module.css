@@ -1,0 +1,25 @@
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px; /* Adjust the icon size as needed */
+  /* color: #ffffff;   */
+}
+
+.text {
+  margin-left: 8px; /* Space between icon and text */
+  font-size: 16px; /* Adjust the text size as needed */
+  /* color: #ffffff;     */
+}
+
+.languageSwitcher .ant-dropdown-menu-item {
+  font-size: 16px; /* Adjust the font size for dropdown items */
+}

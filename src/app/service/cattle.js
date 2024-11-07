@@ -1,17 +1,13 @@
 /** @format */
 
 const axios = require("axios");
-const API_URL = "http://smart-cattle-back-end.vercel.app/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-// ดึง token จาก localStorage หรือแหล่งจัดเก็บที่ปลอดภัยอื่นๆ
-const token = localStorage.getItem("authToken");
-
-const createCattle = async (cattleData) => {
-	console.log(cattleData);
+const createCattle = async (cattleData, authToken) => {
 	try {
 		const response = await axios.post(`${API_URL}/create-cattle`, cattleData, {
 			headers: {
-				Authorization: `Bearer ${token}`, // เพิ่ม token ใน Authorization header
+				Authorization: `Bearer ${authToken}`,
 			},
 		});
 		return response.data;
@@ -21,12 +17,11 @@ const createCattle = async (cattleData) => {
 	}
 };
 
-const getCattleByEmail = async (email) => {
-	console.log(email);
+const getCattleByEmail = async (email, authToken) => {
 	try {
 		const response = await axios.get(`${API_URL}/get-cattle-by-email/${email}`, {
 			headers: {
-				Authorization: `Bearer ${token}`, // เพิ่ม token ใน Authorization header
+				Authorization: `Bearer ${authToken}`,
 			},
 		});
 		return response.data;
@@ -36,11 +31,11 @@ const getCattleByEmail = async (email) => {
 	}
 };
 
-const updateCattle = async (id, cattleData) => {
+const updateCattle = async (id, cattleData, authToken) => {
 	try {
 		const response = await axios.put(`${API_URL}/update-cattle/${id}`, cattleData, {
 			headers: {
-				Authorization: `Bearer ${token}`, // เพิ่ม token ใน Authorization header
+				Authorization: `Bearer ${authToken}`,
 			},
 		});
 		return response.data;
@@ -50,11 +45,11 @@ const updateCattle = async (id, cattleData) => {
 	}
 };
 
-const deleteCattle = async (id) => {
+const deleteCattle = async (id, authToken) => {
 	try {
 		const response = await axios.delete(`${API_URL}/delete-cattle/${id}`, {
 			headers: {
-				Authorization: `Bearer ${token}`, // เพิ่ม token ใน Authorization header
+				Authorization: `Bearer ${authToken}`,
 			},
 		});
 		return response.data;

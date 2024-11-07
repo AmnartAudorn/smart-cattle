@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff; /* Subtle background color */
+  align-items: center; /* Center content */
+  justify-content: flex-start;
+  margin-top: 50px;
+  /* min-height: 100vh; */
+}
+
+.customCollapse {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly more shadow */
+  width: 100%;
+  max-width: 800px; /* Limit width for larger screens */
+  margin: 20px auto; /* Center horizontally with margin */
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  font-size: 16px; /* Increase font size */
+  font-weight: bold;
+  color: #000000;
+  padding: 12px; /* Add padding for a cleaner look */
+  background-color: #ffffff; /* Light background for header */
+  border-radius: 8px; /* Rounded corners for header */
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #52c41a; /* Change to green for a fresh look */
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #52c41a; /* A brighter green matching the icon */
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Add shadow to elevate the footer */
+}
+
+.table-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto; /* Margin for spacing */
+  background-color: #ffffff; /* Table background */
+  border-radius: 8px; /* Rounded corners for table container */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for the table */
+  overflow: hidden; /* Prevent overflow of table contents */
+}
+
+.ant-table {
+  border-radius: 8px; /* Rounded table corners */
+}
+
+.ant-table-thead > tr > th {
+  background-color: #52c41a !important; /* Brighter header */
+  color: white !important; /* White text for contrast */
+  font-weight: bold;
+}
+
+.ant-table-tbody > tr:hover {
+  background-color: #f6f8fa; /* Subtle hover effect */
+}
+
+.ant-select, .ant-datepicker {
+  width: 100%;
+  border-radius: 8px !important; /* Rounded select and date picker */
+  padding: 8px !important; /* Padding inside select */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for inputs */
+}
+
+.ant-collapse-header {
+  border-bottom: none !important; /* Remove border */
+}
+
+.ant-collapse-header {
+  display: none; /* Hide the header */
+}
+
+.ant-collapse-content-active {
+  border-top: none !important; /* Remove top border when expanded */
+}

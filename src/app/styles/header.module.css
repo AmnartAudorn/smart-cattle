@@ -1,0 +1,42 @@
+  /* Header styling with fixed position */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #8BC34A;
+    color: white;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    z-index: 1000;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: space-between; /* Align title to the left and navbar to the right */
+    align-items: center; /* Vertically center title and navbar */
+    padding: 0 20px; /* Optional padding for spacing */
+  }
+
+.headerTitle {
+    color: white; /* Title color */
+    margin: 0; /* Remove default margin */
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center; /* Center icons vertically */
+    justify-content: flex-end; /* Align icons to the right */
+}
+
+.iconButton {
+    color: white; /* Icon color */
+    font-size: 24px; /* Adjust size as needed */
+    margin-left: 20px; /* Spacing between icons (if there are more) */
+}
+
+.navbar {
+    display: flex;
+    align-items: center; /* Center the items vertically */
+}

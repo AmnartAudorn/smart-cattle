@@ -1,0 +1,133 @@
+
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align the menu button to the right */
+  }
+  
+  .menuButton {
+    background-color: #8BC34A; /* Background color of the button */
+    border: none;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255); /* Blue color for the menu icon */
+    cursor: pointer;
+    border-radius: 8px; /* Makes the button edges rounded */
+    padding: 10px; /* Add some padding to make it larger */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .menuButton:hover {
+    background-color: #8BC34A; 
+    color: rgb(255, 255, 255);
+  }
+
+  .drawer{
+    width: 100%;
+  }
+  
+  
+  .ant-drawer-title {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+  }
+  
+  .ant-drawer {
+    background-color: #ffffff;
+  }
+  
+  .ant-menu {
+    background-color: transparent; /* Remove background for the menu */
+    border-right: none;
+  }
+  
+  .ant-menu-item {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+  
+
+  
+  .ant-menu-item-icon {
+    color: rgb(255, 255, 255); /* Set the icon color to black */
+  }
+  
+  .ant-menu-item span {
+    color: rgb(255, 255, 255); /* Set the text color to black */
+  }
+  
+  .ant-menu-item:last-child {
+    color: red; /* Red color for the logout menu item */
+  }
+  
+  .ant-menu-item:last-child .ant-menu-item-icon {
+    color: red; /* Red icon for logout */
+  }
+  
+  .manu-item {
+    font-size: 16px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); 
+    margin: 15px;
+  }
+  
+  .manu-item-logout{
+    font-size: 16px;
+    color: rgb(255, 0, 0);
+    box-shadow: 0px 2px 10px rgba(248, 3, 3, 0.1); 
+   
+  }
+  
+  .img {
+    width: 100%; /* Make the image take up the full width of its container */
+    max-height: 200px; /* Limit the height so it doesn’t get too tall */
+    object-fit: contain; /* Ensure the image scales without distortion */
+    object-position: center; /* Center the image within its container */
+    border-radius: 10px; /* Optional: give it rounded corners to match the form */
+    margin-top: 10px;
+}
+  
+
+.drawerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.languageSwitcher {
+  margin-left: 8px; /* Adjust spacing as needed */
+}
+
+@media (min-width: 768px) {
+    .menuIcon {
+      display: none; /* Hide menu icon on larger screens */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar {
+      display: flex; /* Ensure navbar is visible on larger screens */
+    }
+  
+    .menuIcon {
+      display: none; /* Hide hamburger icon on larger screens */
+    }
+  }
+  
+
+  .badge {
+    position: relative; /* Ensure proper positioning for the badge */
+}
+
+
+/* Style for the badge */
+.ant-badge {
+    background-color: #f5222d; /* Set badge color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Optional shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Optional: Style for overflow badge */
+.ant-badge-overflow-count {
+    font-size: 12px; /* Smaller font size for overflow count */
+    padding: 0 6px; /* Add some padding */
+}
