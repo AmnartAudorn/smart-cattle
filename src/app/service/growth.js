@@ -40,7 +40,22 @@ const getCattleRecords = async (authToken) => {
 	}
 };
 
+const createGrowthRecord = async (CattleRecordsData, authToken) => {
+	try {
+		const response = await axios.post(`${API_URL}/addCattleRecords`, CattleRecordsData, {
+			headers: {
+				Authorization: `Bearer ${authToken}`,
+			},
+		});
+		return response.data;
+	} catch (error) {
+		const errorMessage = error.response?.data?.message || "Internal Server Error.";
+		throw new Error(errorMessage);
+	}
+};
+
 module.exports = {
 	getCattleByEmail,
 	getCattleRecords,
+	createGrowthRecord,
 };

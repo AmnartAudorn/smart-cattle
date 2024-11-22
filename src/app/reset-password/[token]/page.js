@@ -54,6 +54,7 @@ const ResetPassword = () => {
 						rules={[{ required: true, message: t("inputNewPassword") }]}
 					>
 						<Input.Password
+							id={styles.searchBar}
 							placeholder={t("newPasswordPlaceholder")}
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
@@ -64,6 +65,7 @@ const ResetPassword = () => {
 						rules={[{ required: true, message: t("inputConfirmPassword") }]}
 					>
 						<Input.Password
+							id={styles.searchBar}
 							placeholder={t("confirmPasswordPlaceholder")}
 							value={confirmPassword}
 							onChange={(e) => setConfirmPassword(e.target.value)}

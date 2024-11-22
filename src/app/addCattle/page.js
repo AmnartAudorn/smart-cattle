@@ -128,7 +128,10 @@ const AddCattle = () => {
 							label={t("rfid_label")}
 							rules={[{ required: true, message: t("required_message") + t("rfid_label") }]}
 						>
-							<Input placeholder={t("rfid_placeholder")} />
+							<Input
+								id={styles.searchBar}
+								placeholder={t("rfid_placeholder")}
+							/>
 						</Form.Item>
 
 						<Form.Item
@@ -136,7 +139,10 @@ const AddCattle = () => {
 							label={t("name_label")}
 							rules={[{ required: true, message: t("required_message") + t("name_label") }]}
 						>
-							<Input placeholder={t("name_placeholder")} />
+							<Input
+								id={styles.searchBar}
+								placeholder={t("name_placeholder")}
+							/>
 						</Form.Item>
 
 						<Form.Item
@@ -147,6 +153,7 @@ const AddCattle = () => {
 							<Select
 								placeholder={t("gender_label")}
 								onChange={handleGenderChange}
+								id={styles.searchBar}
 							>
 								<Option value='male'>{t("male")}</Option>
 								<Option value='female'>{t("female")}</Option>
@@ -158,7 +165,10 @@ const AddCattle = () => {
 							label={t("status_label")}
 							rules={[{ required: true, message: t("required_message") + t("status_label") }]}
 						>
-							<Select placeholder={t("status_placeholder")}>
+							<Select
+								placeholder={t("status_placeholder")}
+								id={styles.searchBar}
+							>
 								{categoryList
 									.filter((category) => category.gender === gender)
 									.map((category) => (
@@ -182,7 +192,10 @@ const AddCattle = () => {
 							label={t("nid_label")}
 							rules={[{ required: true, message: t("required_message") + t("nid_label") }]}
 						>
-							<Input placeholder={t("nid_placeholder")} />
+							<Input
+								id={styles.searchBar}
+								placeholder={t("nid_placeholder")}
+							/>
 						</Form.Item>
 
 						<Form.Item
@@ -190,7 +203,10 @@ const AddCattle = () => {
 							label={t("lineage_label")}
 							rules={[{ required: true, message: t("required_message") + t("lineage_label") }]}
 						>
-							<Select placeholder={t("lineage_placeholder")}>
+							<Select
+								placeholder={t("lineage_placeholder")}
+								id={styles.searchBar}
+							>
 								{lineageOptions.map((option, index) => (
 									<Select.Option
 										key={index}

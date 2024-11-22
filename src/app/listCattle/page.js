@@ -133,7 +133,7 @@ const ListCattle = () => {
 			};
 			await cattleService.updateCattle(selectedItem._id, formattedValues, authToken);
 			notification.success({
-				message: t("success"),
+				message: t("UpdateSuccess"),
 				description: t("cattleUpdatedSuccess"),
 			});
 			saveNotification(" Cattle Updated", `Cattle ${values.name} has been added successfully!`);
@@ -155,7 +155,7 @@ const ListCattle = () => {
 		try {
 			await cattleService.deleteCattle(selectedItem._id, authToken);
 			notification.success({
-				message: t("success"),
+				message: t("UpdateSuccess"),
 				description: t("cattleDeletedSuccess"),
 			});
 			setIsModalOpen(false);
@@ -289,6 +289,7 @@ const ListCattle = () => {
 						label={t("rfidLabel")}
 					>
 						<Input
+							id={styles.searchBar}
 							placeholder={t("rfidLabel")}
 							disabled
 						/>
@@ -299,6 +300,7 @@ const ListCattle = () => {
 						label={t("nidLabel")}
 					>
 						<Input
+							id={styles.searchBar}
 							placeholder={t("nidLabel")}
 							disabled
 						/>
@@ -308,7 +310,10 @@ const ListCattle = () => {
 						name='name'
 						label={t("nameLabel")}
 					>
-						<Input placeholder={t("nameLabel")} />
+						<Input
+							id={styles.searchBar}
+							placeholder={t("nameLabel")}
+						/>
 					</Form.Item>
 
 					<Form.Item

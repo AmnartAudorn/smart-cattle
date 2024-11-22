@@ -65,8 +65,7 @@ const FarmDetail = () => {
 		try {
 			await userService.updateUser(farm._id, values);
 			notification.success({
-				message: t("success"),
-				description: t("Update Success!"),
+				message: t("UpdateSuccess"),
 			});
 			fetchUserByEmail(farm.email); // Refresh the user details after editing
 		} catch (error) {
@@ -121,7 +120,10 @@ const FarmDetail = () => {
 									label={t("farmName")}
 									rules={[{ required: true, message: t("validation.farmName") }]}
 								>
-									<Input placeholder={t("farmName")} />
+									<Input
+										id={styles.searchBar}
+										placeholder={t("farmName")}
+									/>
 								</Form.Item>
 							</Col>
 							<Col
@@ -136,7 +138,10 @@ const FarmDetail = () => {
 										{ pattern: /.+\@.+\..+/, message: t("validation.email_format") },
 									]}
 								>
-									<Input placeholder={t("email")} />
+									<Input
+										id={styles.searchBar}
+										placeholder={t("email")}
+									/>
 								</Form.Item>
 							</Col>
 							<Col
@@ -148,7 +153,10 @@ const FarmDetail = () => {
 									label={t("firstName")}
 									rules={[{ required: true, message: t("validation.firstName") }]}
 								>
-									<Input placeholder={t("firstName")} />
+									<Input
+										id={styles.searchBar}
+										placeholder={t("firstName")}
+									/>
 								</Form.Item>
 							</Col>
 							<Col
@@ -160,7 +168,10 @@ const FarmDetail = () => {
 									label={t("lastName")}
 									rules={[{ required: true, message: t("validation.lastName") }]}
 								>
-									<Input placeholder={t("lastName")} />
+									<Input
+										id={styles.searchBar}
+										placeholder={t("lastName")}
+									/>
 								</Form.Item>
 							</Col>
 							<Col
@@ -172,7 +183,10 @@ const FarmDetail = () => {
 									label={t("phoneNumber")}
 									rules={[{ required: true, message: t("validation.phoneNumber") }]}
 								>
-									<Input placeholder={t("phoneNumber")} />
+									<Input
+										id={styles.searchBar}
+										placeholder={t("phoneNumber")}
+									/>
 								</Form.Item>
 							</Col>
 							<Col
@@ -184,7 +198,10 @@ const FarmDetail = () => {
 									label={t("address")}
 									rules={[{ required: true, message: t("validation.address") }]}
 								>
-									<Input.TextArea placeholder={t("address")} />
+									<Input.TextArea
+										id={styles.searchBar}
+										placeholder={t("address")}
+									/>
 								</Form.Item>
 							</Col>
 						</Row>

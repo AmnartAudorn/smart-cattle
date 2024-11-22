@@ -35,7 +35,7 @@ const Login = () => {
 		} catch (error) {
 			notification.error({
 				message: t("loginFailed"),
-				description: error.message,
+				description: t(error.message),
 			});
 		}
 	};
@@ -70,6 +70,7 @@ const Login = () => {
 						>
 							<Input
 								prefix={<UserOutlined className='site-form-item-icon' />}
+								className={styles.searchBar}
 								placeholder={t("rulesEmail")}
 							/>
 						</Form.Item>
@@ -78,6 +79,7 @@ const Login = () => {
 							rules={[{ required: true, message: t("rulesPass") }]}
 						>
 							<Input
+								className={styles.searchBar}
 								prefix={<LockOutlined className='site-form-item-icon' />}
 								type='password'
 								placeholder={t("rulesPass")}

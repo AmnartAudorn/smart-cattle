@@ -22,8 +22,8 @@ const Register = () => {
 		try {
 			await userService.createUser(values);
 			notification.success({
-				message: t("success"),
-				description: t("created success"),
+				message: t("createUser"),
+				description: t("createUsersuccess"),
 			});
 			router.push("/");
 		} catch (error) {
@@ -55,7 +55,10 @@ const Register = () => {
 								name='farmName'
 								rules={[{ required: true, message: t("validation.farmName") }]}
 							>
-								<Input placeholder={t("farmName")} />
+								<Input
+									id={styles.searchBar}
+									placeholder={t("farmName")}
+								/>
 							</Form.Item>
 						</Col>
 						<Col
@@ -72,7 +75,10 @@ const Register = () => {
 									},
 								]}
 							>
-								<Input placeholder={t("email")} />
+								<Input
+									id={styles.searchBar}
+									placeholder={t("email")}
+								/>
 							</Form.Item>
 						</Col>
 
@@ -84,7 +90,10 @@ const Register = () => {
 								name='firstName'
 								rules={[{ required: true, message: t("validation.firstName") }]}
 							>
-								<Input placeholder={t("firstName")} />
+								<Input
+									id={styles.searchBar}
+									placeholder={t("firstName")}
+								/>
 							</Form.Item>
 						</Col>
 						<Col
@@ -95,7 +104,10 @@ const Register = () => {
 								name='lastName'
 								rules={[{ required: true, message: t("validation.lastName") }]}
 							>
-								<Input placeholder={t("lastName")} />
+								<Input
+									id={styles.searchBar}
+									placeholder={t("lastName")}
+								/>
 							</Form.Item>
 						</Col>
 
@@ -108,7 +120,10 @@ const Register = () => {
 								rules={[{ required: true, message: t("validation.password") }]}
 								hasFeedback
 							>
-								<Input.Password placeholder={t("password")} />
+								<Input.Password
+									placeholder={t("password")}
+									id={styles.searchBar}
+								/>
 							</Form.Item>
 						</Col>
 
@@ -132,7 +147,10 @@ const Register = () => {
 									}),
 								]}
 							>
-								<Input.Password placeholder={t("confirmPassword")} />
+								<Input.Password
+									id={styles.searchBar}
+									placeholder={t("confirmPassword")}
+								/>
 							</Form.Item>
 						</Col>
 
@@ -144,7 +162,10 @@ const Register = () => {
 								name='phoneNumber'
 								rules={[{ required: true, message: t("validation.phoneNumber") }]}
 							>
-								<Input placeholder={t("phoneNumber")} />
+								<Input
+									id={styles.searchBar}
+									placeholder={t("phoneNumber")}
+								/>
 							</Form.Item>
 						</Col>
 
@@ -156,7 +177,10 @@ const Register = () => {
 								name='address'
 								rules={[{ required: true, message: t("validation.address") }]}
 							>
-								<Input.TextArea placeholder={t("address")} />
+								<Input.TextArea
+									placeholder={t("address")}
+									id={styles.searchBar}
+								/>
 							</Form.Item>
 						</Col>
 					</Row>

@@ -290,7 +290,10 @@ const Navbar = () => {
 						label={t("notificationTitle")}
 						rules={[{ required: true, message: t("enterTitle") }]}
 					>
-						<Input placeholder={t("notificationTitlePlaceholder")} />
+						<Input
+							id={styles.searchBar}
+							placeholder={t("notificationTitlePlaceholder")}
+						/>
 					</Form.Item>
 					<Form.Item
 						name='description'
@@ -298,6 +301,7 @@ const Navbar = () => {
 						rules={[{ required: true, message: t("enterDescription") }]}
 					>
 						<Input.TextArea
+							id={styles.searchBar}
 							rows={4}
 							placeholder={t("notificationDescriptionPlaceholder")}
 						/>

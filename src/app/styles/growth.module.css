@@ -39,9 +39,9 @@
   margin-top: auto;
   text-align: center;
   padding: 20px 0;
-  background-color: #52c41a; /* A brighter green matching the icon */
+  background-color: #8BC34A; /* A brighter green matching the icon */
   color: white;
-  font-size: 14px;
+  font-size: 16px;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -91,4 +91,30 @@
 
 .ant-collapse-content-active {
   border-top: none !important; /* Remove top border when expanded */
+}
+
+#searchBar {
+  margin-bottom: 0px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.mainButton {
+  margin-top: 0px;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  max-width: 800px;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Smooth color transition */
+}
+
+.mainButton:hover {
+  background-color: #388E3C; /* Darken on hover */
 }

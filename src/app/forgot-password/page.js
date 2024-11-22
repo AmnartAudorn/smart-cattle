@@ -57,6 +57,7 @@ const ForgotPassword = () => {
 							rules={[{ required: true, type: "email", message: t("emailRequired") }]}
 						>
 							<Input
+								id={styles.searchBar}
 								type='email'
 								placeholder={t("emailPlaceholder")}
 								value={email}

@@ -2,9 +2,10 @@
 
 "use client";
 import React, { useState, useEffect } from "react";
-import { Collapse, Select, Table, DatePicker } from "antd";
+import { Collapse, Select, Table, DatePicker, Button, Modal, Form, Input, notification } from "antd";
 import { CalculatorOutlined, LineChartOutlined, TableOutlined } from "@ant-design/icons";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, BarChart, Bar } from "recharts";
+import { PlusOutlined } from "@ant-design/icons";
 import Header from "../header";
 import cattleService from "../service/cattle";
 import growthService from "../service/growth";
@@ -313,112 +314,239 @@ export default function Growth() {
 							columns={columns}
 							rowKey={(record) => `${record.date}-${record.rfid}`}
 							style={{ marginTop: "16px" }}
-							pagination={{ pageSize: 5 }}
+							pagination={{
+								pageSize: 5,
+								onChange: (page, pageSize) => {
+									console.log(`Page changed to: ${page}, Page size: ${pageSize}`);
+									setSearchDate(null);
+								},
+							}}
 							locale={{
 								emptyText: <p style={{ textAlign: "center", marginTop: "16px", color: "red" }}>{t("No_growth_records_for_cattle")}</p>,
 							}}
-							onChange={() => setSearchDate(null)}
 						/>
 					) : null}
 				</>
 			),
 		},
-		{
-			key: "2",
-			showArrow: false,
-			label: (
-				<div className={styles.panelHeader}>
-					<LineChartOutlined className={styles.icon} />
-					<span>{t("cattle_growth_statistics")}</span>
-				</div>
-			),
-			children: (
-				<>
-					<Select
-						placeholder={t("select_growth")}
-						style={{ width: "100%" }}
-						onChange={handleSelectChange}
-					>
-						<Option value='individual'>{t("average_individual_growth")}</Option>
-						<Option value='category'>{t("average_individual_growth_type")}</Option>
-					</Select>
+		// {
+		// 	key: "2",
+		// 	showArrow: false,
+		// 	label: (
+		// 		<div className={styles.panelHeader}>
+		// 			<LineChartOutlined className={styles.icon} />
+		// 			<span>{t("cattle_growth_statistics")}</span>
+		// 		</div>
+		// 	),
+		// 	children: (
+		// 		<>
+		// 			<Select
+		// 				placeholder={t("select_growth")}
+		// 				style={{ width: "100%" }}
+		// 				onChange={handleSelectChange}
+		// 			>
+		// 				<Option value='individual'>{t("average_individual_growth")}</Option>
+		// 				<Option value='category'>{t("average_individual_growth_type")}</Option>
+		// 			</Select>
 
-					{selectedType === "individual" && (
-						<Select
-							placeholder={t("selectCow")}
-							style={{ width: "100%", marginTop: "16px" }}
-							onChange={handleCattleSelect}
-						>
-							{cattleList.map((cattle) => (
-								<Option
-									key={cattle.rfid}
-									value={cattle.rfid}
-								>
-									{cattle.rfid}
-								</Option>
-							))}
-						</Select>
-					)}
+		// 			{selectedType === "individual" && (
+		// 				<Select
+		// 					placeholder={t("selectCow")}
+		// 					style={{ width: "100%", marginTop: "16px" }}
+		// 					onChange={handleCattleSelect}
+		// 				>
+		// 					{cattleList.map((cattle) => (
+		// 						<Option
+		// 							key={cattle.rfid}
+		// 							value={cattle.rfid}
+		// 						>
+		// 							{cattle.rfid}
+		// 						</Option>
+		// 					))}
+		// 				</Select>
+		// 			)}
 
-					{selectedType === "category" && (
-						<Select
-							placeholder={t("select_type")}
-							style={{ width: "100%", marginTop: "16px" }}
-							onChange={handleCategorySelect}
-						>
-							{categoryList.map((category) => (
-								<Option
-									key={category.id}
-									value={category.id}
-								>
-									{category.name}
-								</Option>
-							))}
-						</Select>
-					)}
+		// 			{selectedType === "category" && (
+		// 				<Select
+		// 					placeholder={t("select_type")}
+		// 					style={{ width: "100%", marginTop: "16px" }}
+		// 					onChange={handleCategorySelect}
+		// 				>
+		// 					{categoryList.map((category) => (
+		// 						<Option
+		// 							key={category.id}
+		// 							value={category.id}
+		// 						>
+		// 							{category.name}
+		// 						</Option>
+		// 					))}
+		// 				</Select>
+		// 			)}
 
-					{chartData.length > 0 ? (
-						<>
-							<h3 style={{ marginTop: "14px", textAlign: "center" }}>{t("growth_average_chart")}</h3>
-							<div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "16px" }}>
-								{/* Line Chart */}
-								<LineChart
-									width={Math.min(600, window.innerWidth - 40)} // Dynamic width based on screen size
-									height={window.innerWidth < 600 ? 200 : 200} // Adjust height for mobile devices
-									data={chartData}
-									style={{ width: "90%" }}
-								>
-									<CartesianGrid stroke='#ccc' />
-									<XAxis dataKey='date' />
-									<YAxis />
-									<Tooltip />
-									<Line
-										type='monotone'
-										dataKey='averageWeight'
-										stroke='#8884d8'
-									/>
-								</LineChart>
+		// 			{chartData.length > 0 ? (
+		// 				<>
+		// 					<h3 style={{ marginTop: "14px", textAlign: "center" }}>{t("growth_average_chart")}</h3>
+		// 					<div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginTop: "16px" }}>
+		// 						{/* Line Chart */}
+		// 						<LineChart
+		// 							width={Math.min(600, window.innerWidth - 40)} // Dynamic width based on screen size
+		// 							height={window.innerWidth < 600 ? 200 : 200} // Adjust height for mobile devices
+		// 							data={chartData}
+		// 							style={{ width: "90%" }}
+		// 						>
+		// 							<CartesianGrid stroke='#ccc' />
+		// 							<XAxis dataKey='date' />
+		// 							<YAxis />
+		// 							<Tooltip />
+		// 							<Line
+		// 								type='monotone'
+		// 								dataKey='averageWeight'
+		// 								stroke='#8884d8'
+		// 							/>
+		// 						</LineChart>
 
-								{/* Text below the chart */}
-								<div style={{ display: "flex", justifyContent: "center", width: Math.min(600, window.innerWidth - 40), marginTop: "10px" }}>
-									<CalculatorOutlined style={{ fontSize: "14px", marginRight: "8px" }} /> {/* Icon */}
-									<span style={{ fontSize: "14px" }}>
-										{t("monthly_avg_weight")}: {totalAverage}
-									</span>
-								</div>
-							</div>
-						</>
-					) : (
-						<p style={{ textAlign: "center", marginTop: "14px", color: "red" }}>{t("noDataS")}</p>
-					)}
-				</>
-			),
-		},
+		// 						{/* Text below the chart */}
+		// 						<div style={{ display: "flex", justifyContent: "center", width: Math.min(600, window.innerWidth - 40), marginTop: "10px" }}>
+		// 							<CalculatorOutlined style={{ fontSize: "14px", marginRight: "8px" }} /> {/* Icon */}
+		// 							<span style={{ fontSize: "14px" }}>
+		// 								{t("monthly_avg_weight")}: {totalAverage}
+		// 							</span>
+		// 						</div>
+		// 					</div>
+		// 				</>
+		// 			) : (
+		// 				<p style={{ textAlign: "center", marginTop: "14px", color: "red" }}>{t("noDataS")}</p>
+		// 			)}
+		// 		</>
+		// 	),
+		// },
 	];
+
+	const [isModalVisible, setIsModalVisible] = useState(false);
+	const [form] = Form.useForm();
+
+	// Show and hide modal
+	const showModal = () => {
+		setIsModalVisible(true);
+	};
+
+	const handleCancel = () => {
+		form.resetFields();
+		setIsModalVisible(false);
+	};
+
+	// Handle form submission
+	const handleCreateRecord = async (values) => {
+		try {
+			// Prepare data
+			const newRecord = {
+				rfid: values.rfid,
+				weight: values.weight,
+				date: values.date.format("YYYY-MM-DD"), // Format date
+				userEmail: userEmail, // Use the logged-in user's email
+			};
+
+			// Send data to backend
+			await growthService.createGrowthRecord(newRecord, authToken);
+
+			notification.success({
+				message: t("success_message"),
+				description: t("success_description"),
+			});
+
+			// Refresh growth records
+			fetchGrowthRecords(authToken);
+
+			// Close modal
+			handleCancel();
+		} catch (error) {
+			notification.error({
+				message: t("error_message"),
+				description: t("error_description"),
+			});
+			console.error("Error creating record:", error);
+		}
+	};
 
 	return (
 		<div className={styles.container}>
 			<Header />
+			<Button
+				type='primary'
+				icon={<PlusOutlined />}
+				onClick={showModal}
+				className={styles.mainButton}
+			>
+				{t("add_weight_record")}
+			</Button>
+
+			<Modal
+				title={t("add_weight_record")}
+				visible={isModalVisible}
+				onCancel={handleCancel}
+				footer={null}
+			>
+				<Form
+					form={form}
+					layout='vertical'
+					onFinish={handleCreateRecord}
+				>
+					<Form.Item
+						label={t("rfid_label")}
+						name='rfid'
+						rules={[{ required: true, message: t("rfid_placeholder") }]}
+					>
+						<Select
+							placeholder={t("select_cattle")}
+							style={{ width: "100%" }}
+							onChange={handleCattleSelect}
+							showSearch
+							optionFilterProp='children'
+						>
+							{cattleList.map((cattle) => (
+								<Select.Option
+									key={cattle.rfid}
+									value={cattle.rfid}
+								>
+									{cattle.rfid} - {cattle.name}
+								</Select.Option>
+							))}
+						</Select>
+					</Form.Item>
+
+					<Form.Item
+						label={t("weightLabel")}
+						name='weight'
+						rules={[{ required: true, message: t("enter_weight") }]}
+					>
+						<Input placeholder={t("enter_weight")} />
+					</Form.Item>
+
+					<Form.Item
+						label={t("weighingDay")}
+						name='date'
+						rules={[{ required: true, message: t("selectDate") }]}
+					>
+						<DatePicker
+							format='D MMMM YYYY'
+							style={{ width: "100%" }}
+							disabledDate={(current) => {
+								const today = moment().startOf("day");
+								return (current && current.startOf("day").isAfter(today)) || current.startOf("day").isBefore(today);
+							}}
+						/>
+					</Form.Item>
+
+					<Form.Item>
+						<Button
+							type='primary'
+							htmlType='submit'
+						>
+							{t("submit")}
+						</Button>
+					</Form.Item>
+				</Form>
+			</Modal>
 			<Collapse
 				items={collapseItems}
 				accordion
