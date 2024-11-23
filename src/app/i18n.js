@@ -69,7 +69,7 @@ const resources = {
 			inputNewPassword: "សូមបញ្ចូលពាក្យសម្ងាត់ថ្មីរបស់អ្នក!",
 			inputConfirmPassword: "សូមបញ្ជាក់ពាក្យសម្ងាត់ថ្មីរបស់អ្នក!",
 			resetPasswordButton: "កំណត់ពាក្យសម្ងាត់ឡើងវិញ",
-			searchPlaceholder: "ស្វែងរកគោនៅក្នុងฟាម",
+			searchPlaceholder: "ស្វែងរកគោនៅក្នុងហ្វាម",
 			addCattleButton: "បន្ថែមគោ",
 			noCattleFound: "មិនមានគោ",
 			editModalTitle: "កែសម្រួលព័ត៌មានគោ",
