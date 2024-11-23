@@ -223,7 +223,7 @@ const AddCattle = () => {
 							label={t("birthDate_label")}
 							rules={[{ required: true, message: t("required_message") + t("birthDate_label") }]}
 						>
-							<DatePicker style={{ width: "100%" }} />
+							<DatePicker style={{ padding: "8px", fontSize: "16px;", width: "100%" }} />
 						</Form.Item>
 						<Form.Item
 							name='weight'
@@ -233,7 +233,7 @@ const AddCattle = () => {
 							<InputNumber
 								min={0}
 								placeholder={t("weight_placeholder")}
-								style={{ width: "100%" }}
+								style={{ padding: "8px", fontSize: "16px;", width: "100%" }}
 							/>
 						</Form.Item>
 					</Col>

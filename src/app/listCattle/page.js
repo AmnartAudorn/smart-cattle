@@ -334,6 +334,7 @@ const ListCattle = () => {
 						label={t("weightLabel")}
 					>
 						<InputNumber
+							id={styles.searchBar}
 							min={0}
 							placeholder={t("weightLabel")}
 							style={{ width: "100%" }}
@@ -345,7 +346,10 @@ const ListCattle = () => {
 						label={t("lineageLabel")}
 						rules={[{ required: true, message: t("please_select_breed") }]} // Validation rule
 					>
-						<Select placeholder={t("please_select_breed")}>
+						<Select
+							placeholder={t("please_select_breed")}
+							id={styles.searchBar}
+						>
 							{lineageOptions.map((option, index) => (
 								<Select.Option
 									key={index}
@@ -362,6 +366,7 @@ const ListCattle = () => {
 						label={t("birthDateLabel")}
 					>
 						<DatePicker
+							id={styles.searchBar}
 							style={{ width: "100%" }}
 							value={form.getFieldValue("birthDate") ? dayjs(form.getFieldValue("birthDate")) : null}
 							onChange={(date) => handleChangeDate(date)}

@@ -257,7 +257,7 @@ const Navbar = () => {
 						type='secondary'
 						style={{ fontSize: "12px" }}
 					>
-						{t("version")}
+						version 1.0.0
 					</Text>
 				</div>
 			</Drawer>
