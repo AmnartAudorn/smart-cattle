@@ -136,7 +136,7 @@ const ListCattle = () => {
 				message: t("UpdateSuccess"),
 				description: t("cattleUpdatedSuccess"),
 			});
-			saveNotification(" Cattle Updated", `Cattle ${values.name} has been added successfully!`);
+			// saveNotification(" Cattle Updated", `Cattle ${values.name} has been added successfully!`);
 
 			setIsModalOpen(false);
 			fetchCattleByEmail(userEmail);

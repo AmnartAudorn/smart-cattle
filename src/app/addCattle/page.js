@@ -68,7 +68,7 @@ const AddCattle = () => {
 				message: t("cattleCreated"),
 				description: t("cattleCreatedSuccess"),
 			});
-			saveNotification("New Cattle Created", `Cattle ${values.name} has been added successfully!`);
+			// saveNotification("New Cattle Created", `Cattle ${values.name} has been added successfully!`);
 
 			router.push("/listCattle");
 		} catch (error) {
